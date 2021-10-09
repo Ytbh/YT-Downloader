@@ -28,10 +28,10 @@ async def ytdl(_, message):
                                      timedelta(minutes=youtube_next_fetch)
 
     except Exception:
-        await message.reply_text("`A fail tlat mai.. 😔 \nA chhhan chu, he Video Data hi ka hmu thei lo tlat. \n#error`")
+        await message.reply_text("`Ups.. sepertinya terjadi kesalahan... \n#error`")
         return
     buttons = InlineKeyboardMarkup(list(create_buttons(formats)))
-    sentm = await message.reply_text("YT URL a dik e... © @TGBotSzK")
+    sentm = await message.reply_text("Video anda sudah siap!© @Yntkts13344")
     try:
         # Todo add webp image support in thumbnail by default not supported by pyrogram
         # https://www.youtube.com/watch?v=lTTajzrSkCw
@@ -39,7 +39,7 @@ async def ytdl(_, message):
         await sentm.delete()
     except Exception as e:
         try:
-            thumbnail_url = "https://telegra.ph/file/d75ec77d3d1a4a7f64548.jpg"
+            thumbnail_url = "https://telegra.ph/file/9722f85214958fd5c6a5e.jpg"
             await message.reply_photo(thumbnail_url, caption=title, reply_markup=buttons)
         except Exception as e:
             await sentm.edit(
